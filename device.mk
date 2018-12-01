@@ -392,7 +392,13 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc \
     init.qti.chg_policy.sh
-    
+
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_RMX1921
