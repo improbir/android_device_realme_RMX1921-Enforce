@@ -371,6 +371,10 @@ on post-fs-data
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.4/polling
 
+
+    chown system system /sys/class/timed_output/vibrator/vtg_level    
+    chmod 0660 /sys/class/timed_output/vibrator/vtg_level
+
     # Chown polling nodes as needed from UI running on system server
     chown system system /sys/devices/platform/msm_sdcc.1/polling
     chown system system /sys/devices/platform/msm_sdcc.2/polling
