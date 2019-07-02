@@ -20,4 +20,5 @@ allow init firmware_file:filesystem getattr;
 
 allow init sysfs_vibrator:lnk_file read;
 
-
+# Allow init to wrtie to sysfs_battery_supply
+allow init sysfs_battery_supply:file { setattr };
