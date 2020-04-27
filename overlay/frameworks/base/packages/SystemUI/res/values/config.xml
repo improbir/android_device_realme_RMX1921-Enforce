@@ -49,4 +49,6 @@
          RemoteInput.Builder.setEditChoicesBeforeSending. -->
     <bool name="config_smart_replies_in_notifications_edit_choices_before_sending">true</bool>
 
+    <!-- Allow devices override audio panel location to the left side -->
+    <bool name="config_audioPanelOnLeftSide">true</bool>
 </resources>
