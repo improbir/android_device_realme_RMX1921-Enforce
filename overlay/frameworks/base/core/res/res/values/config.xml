@@ -454,5 +454,8 @@
 
     <!-- Shows the required view for in-display fingerprint -->
     <bool name="config_supportsInDisplayFingerprint">true</bool>
+      
+    <!-- Whether device has a notch -->
+    <bool name="config_haveNotch">true</bool>
 
 </resources>
