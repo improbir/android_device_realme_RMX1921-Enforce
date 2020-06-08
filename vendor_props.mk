@@ -140,18 +140,25 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 
 # Surfaceflinger properties
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+<<<<<<< HEAD:vendor_props.mk
    ro.surface_flinger.has_wide_color_display=true \
    ro.surface_flinger.has_HDR_display=true \
    ro.surface_flinger.use_color_management=true \
    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-   ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
-   debug.sf.early_phase_offset_ns=11600000 \
-   debug.sf.early_app_phase_offset_ns=11600000 \
-   debug.sf.early_gl_phase_offset_ns=3000000 \
-   debug.sf.early_gl_app_phase_offset_ns=15000000 \
-   debug.sf.phase_offset_threshold_for_next_vsync_ns=11600000
+   ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 
 
 #AnxCam
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.vendor.device=RMX1921
+
+# Phase offsets
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    debug.sf.use_phase_offsets_as_durations=1 \
+    debug.sf.late.sf.duration=10500000 \
+    debug.sf.late.app.duration=20500000 \
+    debug.sf.early.sf.duration=21000000 \
+    debug.sf.early.app.duration=16500000 \
+    debug.sf.earlyGl.sf.duration=13500000 \
+    debug.sf.earlyGl.app.duration=21000000
+
