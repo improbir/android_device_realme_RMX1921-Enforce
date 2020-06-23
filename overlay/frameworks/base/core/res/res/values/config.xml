@@ -552,4 +552,8 @@
 
     <!-- Wired/BT headset focus mode -->
     <bool name="config_deviceRingtoneFocusMode">true</bool>
+
+    <!-- Whether device has vooc charging support -->
+    <bool name="config_hasVoocCharger">true</bool>
+
 </resources>
