@@ -145,3 +145,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_HDR_display=true \
     ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.wcg_composition_dataspace=143261696
+
+#AnxCam
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.vendor.device=RMX1921

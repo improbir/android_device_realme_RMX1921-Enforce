@@ -104,3 +104,7 @@ persist.sys.oppo.proximity=true
 # Thermal
 persist.sys.enable.oscar=0
 persist.sys.oscar.dc=1
+
+#AnxCam
+ro.product.vendor.device=RMX1921
+
