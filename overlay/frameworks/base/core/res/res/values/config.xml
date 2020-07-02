@@ -319,10 +319,6 @@
      <string translatable="false" name="config_mainBuiltInDisplayCutout">M -70,0 L -70,76 L 70,76 L 70,0 Z</string>
 
 
-    <!-- Height of the status bar -->
-    <dimen name="status_bar_height_portrait">32.0dip</dimen>
-
-
     <!-- This string array should be overridden by the device to present a list of radio
          attributes.  This is used by the connectivity manager to decide which networks can coexist
          based on the hardware -->
