@@ -481,10 +481,7 @@
     <string-array name="config_disabledComponents" translatable="false">
 	<item>com.google.android.googlequicksearchbox/com.google.android.hotword.service.HotwordService</item>
     </string-array>
-
-    <!-- Shows the required view for in-display fingerprint -->
-    <bool name="config_supportsInDisplayFingerprint">true</bool>
-      
+  
     <!-- Whether device has a notch -->
     <bool name="config_haveNotch">true</bool>
 
@@ -579,4 +576,7 @@
          For this time after the screen turns on, the Power Manager
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
+
+    <!-- Shows the required view for in-display fingerprint -->
+    <bool name="config_supportsInDisplayFingerprint">true</bool>
 </resources>
