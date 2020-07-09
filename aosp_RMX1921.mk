@@ -7,8 +7,11 @@
 # Inherit some common LineageOS stuff.
 #$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Include Havoc common configuration
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+# Inherit some common Pixel Experience stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 1080
 
 
 # Include MIUI camera  configuration
@@ -20,7 +23,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_DEVICE := RMX1921
-PRODUCT_NAME := havoc_RMX1921
+PRODUCT_NAME := aosp_RMX1921
 PRODUCT_BRAND := Realme
 PRODUCT_MODEL := Realme XT
 PRODUCT_MANUFACTURER := Realme
@@ -34,9 +37,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="RMX1921" \
     TARGET_DEVICE="RMX1921"
     
-
-# Build Official
-export export HAVOC_BUILD_TYPE=Official
-
-
 
