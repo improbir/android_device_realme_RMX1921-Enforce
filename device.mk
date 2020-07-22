@@ -20,9 +20,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Vendor properties
--include $(LOCAL_PATH)/vendor_props.mk
-
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -298,7 +295,7 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
--include $(LOCAL_PATH)/vendor_prop.mk
+-include $(LOCAL_PATH)/vendor_props.mk
 
 # QTI
 PRODUCT_PACKAGES += \
