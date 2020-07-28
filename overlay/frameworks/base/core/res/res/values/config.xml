@@ -39,7 +39,7 @@
          Refer to power.h for details.
     -->   
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
-    
+
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->    
     <bool name="config_showNavigationBar">true</bool>
@@ -518,6 +518,23 @@
 
     <!-- Shows the required view for in-display fingerprint -->
     <bool name="config_supportsInDisplayFingerprint">true</bool>
+
+    <!-- Specifies the maximum burn-in offset displacement from the center.
+         If -1, no maximum value will be used. -->
+    <integer name="config_burnInProtectionMaxRadius">-1</integer>
+
+    <!-- Specifies the minimum burn-in offset horizontally. -->
+    <integer name="config_burnInProtectionMinHorizontalOffset">-15</integer>
+
+    <!-- Specifies the maximum burn-in offset horizontally. -->
+    <integer name="config_burnInProtectionMaxHorizontalOffset">15</integer>
+
+    <!-- Specifies the minimum burn-in offset vertically. -->
+    <integer name="config_burnInProtectionMinVerticalOffset">-40</integer>
+
+    <!-- Specifies the maximum burn-in offset vertically. -->
+    <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
+>
 
     <!-- The default journal mode to use use when Write-Ahead Logging is not active.
          Choices are: OFF, DELETE, TRUNCATE, PERSIST and MEMORY.
