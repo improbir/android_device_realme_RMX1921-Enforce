@@ -137,7 +137,9 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    RealmeParts
+    RealmeParts \
+    RealmeProximityHelper 
+   
 
 #Freeform Multiwindow
 PRODUCT_COPY_FILES += \
