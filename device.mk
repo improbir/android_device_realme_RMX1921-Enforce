@@ -125,7 +125,9 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    RealmeParts
+    RealmeParts \
+    RealmeProximityHelper 
+   
 
 # Fingerprint
 PRODUCT_PACKAGES += \
