@@ -600,4 +600,8 @@
     <!-- Telephony qualified networks service package name to bind to by default. -->
     <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
 
+    <!-- Delay that allows some content to arrive at the display before switching
+         from DOZE to ON, in millis. -->
+    <integer name="config_wakeUpDelayDoze">95</integer>
+
 </resources>
