@@ -185,6 +185,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
 
+#LMKD STAT LOGGING
+TARGET_LMKD_STATS_LOG := true
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.realme_sdm710
