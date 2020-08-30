@@ -24,20 +24,13 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 
 import com.realme.parts.kcal.KCalSettingsActivity;
-import com.realme.parts.preferences.SecureSettingCustomSeekBarPreference;
+import com.realme.parts.preferences.CustomSeekBarPreference;
 import com.realme.parts.preferences.SecureSettingListPreference;
 import com.realme.parts.preferences.SecureSettingSwitchPreference;
 import com.realme.parts.preferences.VibrationSeekBarPreference;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-
-    final static String PREF_VIBRATION_STRENGTH = "vibration_strength";
-    private final static String VIBRATION_STRENGTH_PATH = "/sys/devices/virtual/timed_output/vibrator/vtg_level";
-
-    // value of vtg_min and vtg_max
-    final static int MIN_VIBRATION = 116;
-    final static int MAX_VIBRATION = 3596;
 
     private static final String PREF_ENABLE_HAL3 = "hal3";
     private static final String HAL3_SYSTEM_PROPERTY = "persist.camera.HAL3.enabled";
@@ -57,14 +50,14 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
     private SecureSettingSwitchPreference mEnableHAL3;
-    private VibrationSeekBarPreference mVibrationStrength;
+    private VibratorStrengthPreference mVibratorStrength;
     private Preference mKcal;
     private SecureSettingListPreference mSPECTRUM;
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
     private SecureSettingListPreference mPreset;
-    private SecureSettingCustomSeekBarPreference mHeadphoneGain;
-    private SecureSettingCustomSeekBarPreference mMicrophoneGain;
+    private CustomSeekBarPreference mHeadphoneGain;
+    private CustomSeekBarPreference mMicrophoneGain;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -75,10 +68,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mEnableHAL3 = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_HAL3);
         mEnableHAL3.setChecked(FileUtils.getProp(HAL3_SYSTEM_PROPERTY, false));
         mEnableHAL3.setOnPreferenceChangeListener(this);
-
-        mVibrationStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_STRENGTH);
-        mVibrationStrength.setEnabled(FileUtils.fileWritable(VIBRATION_STRENGTH_PATH));
-        mVibrationStrength.setOnPreferenceChangeListener(this);
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
@@ -94,6 +83,11 @@ public class DeviceSettings extends PreferenceFragment implements
         mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
         mSPECTRUM.setSummary(mSPECTRUM.getEntry());
         mSPECTRUM.setOnPreferenceChangeListener(this);
+
+        mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
+        if (mVibratorStrength != null) {
+            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+        }
 
         boolean enhancerEnabled;
         try {
@@ -113,10 +107,10 @@ public class DeviceSettings extends PreferenceFragment implements
         mPreset = (SecureSettingListPreference) findPreference(PREF_PRESET);
         mPreset.setOnPreferenceChangeListener(this);
 
-        mHeadphoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
+        mHeadphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
         mHeadphoneGain.setOnPreferenceChangeListener(this);
 
-        mMicrophoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
+        mMicrophoneGain = (CustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
         mMicrophoneGain.setOnPreferenceChangeListener(this);
     }
 
@@ -126,11 +120,6 @@ public class DeviceSettings extends PreferenceFragment implements
         switch (key) {
             case PREF_ENABLE_HAL3:
                 FileUtils.setProp(HAL3_SYSTEM_PROPERTY, (Boolean) value);
-                break;
-
-            case PREF_VIBRATION_STRENGTH:
-                double vibrationValue = (int) value / 100.0 * (MAX_VIBRATION - MIN_VIBRATION) + MIN_VIBRATION;
-                FileUtils.setValue(VIBRATION_STRENGTH_PATH, vibrationValue);
                 break;
 
             case PREF_SPECTRUM:
