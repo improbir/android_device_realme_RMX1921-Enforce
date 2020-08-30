@@ -25,6 +25,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
 import com.realme.parts.kcal.KCalSettingsActivity;
+import com.realme.parts.ambient.AmbientGesturePreferenceActivity;
 import com.realme.parts.preferences.CustomSeekBarPreference;
 import com.realme.parts.preferences.SecureSettingListPreference;
 import com.realme.parts.preferences.SecureSettingSwitchPreference;
@@ -52,6 +53,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private VibratorStrengthPreference mVibratorStrength;
     private Preference mKcal;
+    private Preference mAmbientPref;
     private SecureSettingListPreference mSPECTRUM;
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
@@ -74,6 +76,16 @@ public class DeviceSettings extends PreferenceFragment implements
             Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
             startActivity(intent);
             return true;
+        });
+
+        mAmbientPref = findPreference("ambient_display_gestures");
+        mAmbientPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(getContext(), AmbientGesturePreferenceActivity.class);
+                startActivity(intent);
+                return true;
+            }
         });
 
         mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);

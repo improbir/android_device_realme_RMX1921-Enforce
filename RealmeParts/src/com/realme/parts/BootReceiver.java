@@ -23,6 +23,7 @@ import android.provider.Settings;
 
 import com.realme.parts.preferences.VibratorStrengthPreference;
 import com.realme.parts.kcal.Utils;
+import com.realme.parts.ambient.SensorsDozeService;
 
 public class BootReceiver extends BroadcastReceiver implements Utils {
 
@@ -67,6 +68,10 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_MICROPHONE_GAIN, 0));
         FileUtils.setValue(DeviceSettings.EARPIECE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_EARPIECE_GAIN, 0));
+        // Dirac
         context.startService(new Intent(context, DiracService.class));
+
+        // Ambient
+        context.startService(new Intent(context, SensorsDozeService.class));
     }
 }
