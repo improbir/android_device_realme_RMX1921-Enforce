@@ -28,11 +28,12 @@ import com.realme.parts.kcal.KCalSettingsActivity;
 import com.realme.parts.preferences.CustomSeekBarPreference;
 import com.realme.parts.preferences.SecureSettingListPreference;
 import com.realme.parts.preferences.SecureSettingSwitchPreference;
-import com.realme.parts.preferences.VibrationSeekBarPreference;
+import com.realme.parts.preferences.VibratorStrengthPreference;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    public static final String KEY_VIBSTRENGTH = "vib_strength";
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_KCAL = "device_kcal";
 
