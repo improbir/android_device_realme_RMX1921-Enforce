@@ -52,3 +52,6 @@ persist.audio.dualmic.config                    u:object_r:vendor_audio_prop:s0
 
 # Spectrum
 persist.spectrum.profile                      u:object_r:spectrum_prop:s0
+
+# Dirac
+persist.audio.dirac                           u:object_r:dirac_prop:s0

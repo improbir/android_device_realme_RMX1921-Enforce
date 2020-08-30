@@ -21,3 +21,7 @@ get_prop(hal_audio_default, default_prop);
 allow hal_audio_default property_socket:sock_file { write };
 allow hal_audio_default default_prop:file { read open getattr };
 
+# Dirac
+get_prop(hal_audio_default, dirac_prop)
+set_prop(hal_audio_default, dirac_prop)
+
