@@ -34,6 +34,8 @@ import com.realme.parts.preferences.VibratorStrengthPreference;
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "RealmeParts";
+
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_KCAL = "device_kcal";

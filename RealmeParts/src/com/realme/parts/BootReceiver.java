@@ -16,14 +16,20 @@
 
 package com.realme.parts;
 
+import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
 
+import com.realme.parts.R;
+
 import com.realme.parts.preferences.VibratorStrengthPreference;
 import com.realme.parts.kcal.Utils;
 import com.realme.parts.ambient.SensorsDozeService;
+
+import java.io.IOException;
+import java.util.List;
 
 public class BootReceiver extends BroadcastReceiver implements Utils {
 
