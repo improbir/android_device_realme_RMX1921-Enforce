@@ -15,4 +15,5 @@
 
     <color name="disabled_text_color">#66000000</color>
 
+    <color name="homepage_parts_background">#831616</color>
 </resources>
