@@ -32,9 +32,6 @@ import com.realme.parts.preferences.VibrationSeekBarPreference;
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String PREF_ENABLE_HAL3 = "hal3";
-    private static final String HAL3_SYSTEM_PROPERTY = "persist.camera.HAL3.enabled";
-
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_KCAL = "device_kcal";
 
@@ -49,7 +46,6 @@ public class DeviceSettings extends PreferenceFragment implements
     final static String PREF_MICROPHONE_GAIN = "microphone_gain";
     private static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
-    private SecureSettingSwitchPreference mEnableHAL3;
     private VibratorStrengthPreference mVibratorStrength;
     private Preference mKcal;
     private SecureSettingListPreference mSPECTRUM;
@@ -64,10 +60,6 @@ public class DeviceSettings extends PreferenceFragment implements
         setPreferencesFromResource(R.xml.preferences_realme_parts, rootKey);
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
-
-        mEnableHAL3 = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_HAL3);
-        mEnableHAL3.setChecked(FileUtils.getProp(HAL3_SYSTEM_PROPERTY, false));
-        mEnableHAL3.setOnPreferenceChangeListener(this);
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
@@ -118,10 +110,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-            case PREF_ENABLE_HAL3:
-                FileUtils.setProp(HAL3_SYSTEM_PROPERTY, (Boolean) value);
-                break;
-
             case PREF_SPECTRUM:
                 mSPECTRUM.setValue((String) value);
                 mSPECTRUM.setSummary(mSPECTRUM.getEntry());
