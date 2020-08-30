@@ -144,23 +144,25 @@
     <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
     <string name="custom_seekbar_default_value_is_set">Default value is set</string>
 
-    <!-- Ambient gesture haptic feedback -->
-    <string name="display_gestures">Gestures</string>
-    <string name="ambient_gesture_haptic_feedback">Haptic feedback</string>
-    <string name="ambient_gesture_haptic_feedback_summary">Vibrate when a Ambient gesture is detected</string>
-
     <!-- Ambient Display -->
-    <string name="ambient_display_enable_title">Ambient display gestures</string>
+    <string name="ambient_display_title">Ambient display</string>
+    <string name="ambient_display_enable_title">Ambient display</string>
     <string name="ambient_display_enable_summary">Wake screen when you receive notifications</string>
     <string name="ambient_display_gestures_title">Ambient display gestures</string>
     <string name="ambient_display_gestures_summary">Additional gestures to wake the screen</string>
     <string name="ambient_display_summary">Wake screen when you receive notifications</string>
     <string name="ambient_display_summary_on">Screen will wake when you receive notifications</string>
     <string name="ambient_display_summary_off">Screen will not wake when you receive notifications</string>
+    <string name="ambient_display_always_on_title">Always on</string>
+    <string name="ambient_display_always_on_summary">Show time, notification icons, and other info. Increased battery usage.</string>
 
-    <!-- Doze sensor -->
+    <!-- Tilt sensor -->
     <string name="tilt_sensor_title">Tilt sensor</string>
+
+    <!-- Pickup sensor -->
     <string name="pickup_sensor_title">Pickup sensor</string>
+
+    <!-- Proximity sensor -->
     <string name="proximity_sensor_title">Proximity sensor</string>
 
     <!-- Hand wave gesture -->
@@ -182,10 +184,30 @@
     <string name="proximity_wake_enable_title">Proximity wake</string>
     <string name="proximity_wake_enable_summary">Wake device on hand wave</string>
 
-    <!-- Label for feature switch -->
+    <!-- Dialog texts -->
+    <string name="dialog_ok">OK</string>
+
+    <!-- Help texts -->
+    <string name="doze_settings_help_title">Help</string>
+    <string name="doze_settings_help_text">These features use sensor events to launch a doze notification pulse. The chosen sensor is only enabled when the device receives a notification, this helps to reduce battery usage. There is also an option to enable the chosen sensor as soon as the screen turns off, this will cause higher battery usage.</string>
+
+
+    <!-- Label for feature switch  -->
     <string name="switch_bar_on">On</string>
 
     <!-- Label for feature switch -->
     <string name="switch_bar_off">Off</string>
 
+    <!-- Ambient gesture haptic feedback -->
+    <string name="ambient_gesture_extras">Extras</string>
+    <string name="ambient_gesture_haptic_feedback">Haptic feedback</string>
+    <string name="ambient_gesture_haptic_feedback_summary">Vibrate when a Ambient gesture is detected</string>
+
+    <!-- Raise to wake strings-->
+    <string name="raise_to_wake_gesture_title">Raise to wake</string>
+    <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
+
+    <!-- Touchscreen gesture haptic feedback -->
+    <string name="touchscreen_gesture_haptic_feedback">Haptic feedback</string>
+    <string name="touchscreen_gesture_haptic_feedback_summary">Vibrate when a Touchscreen gesture is detected</string>
 </resources>

@@ -25,10 +25,10 @@
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-sdk android:minSdkVersion="27" />
-
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
     <protected-broadcast android:name="com.realme.parts.CUST_UPDATE" />
+
+    <uses-sdk android:minSdkVersion="27" />
 
     <application
         android:label="@string/advanced_settings"
@@ -83,16 +83,16 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.realme.parts.ambient.SensorsDozeService"
-                 android:permission="SensorsDozeService">
+        <service android:name=".doze.DozeService"
+                 android:permission="RealmeDozeService">
         </service>
 
         <activity
-            android:name="com.realme.parts.ambient.AmbientGesturePreferenceActivity"
-            android:label="@string/ambient_display_gestures_title">
-            android:icon="@drawable/ic_doze"
+            android:name=".doze.DozeSettingsActivity"
+            android:label="@string/ambient_display_title">
             <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <action android:name="com.realme.parts.DOZE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 

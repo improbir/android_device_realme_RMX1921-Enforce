@@ -26,7 +26,7 @@ import com.realme.parts.R;
 
 import com.realme.parts.preferences.VibratorStrengthPreference;
 import com.realme.parts.kcal.Utils;
-import com.realme.parts.ambient.SensorsDozeService;
+import com.realme.parts.doze.DozeUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -64,6 +64,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_CONTRAST, CONTRAST_DEFAULT) + CONTRAST_OFFSET);
             FileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_HUE, HUE_DEFAULT));
+            DozeUtils.checkDozeService(context);
             VibratorStrengthPreference.restore(context);
         }
 
@@ -76,8 +77,5 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_EARPIECE_GAIN, 0));
         // Dirac
         context.startService(new Intent(context, DiracService.class));
-
-        // Ambient
-        context.startService(new Intent(context, SensorsDozeService.class));
     }
 }
