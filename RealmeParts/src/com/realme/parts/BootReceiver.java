@@ -33,8 +33,7 @@ import java.util.List;
 
 public class BootReceiver extends BroadcastReceiver implements Utils {
 
-    private final String VIBRATION_STRENGTH_PATH = "/sys/devices/virtual/timed_output/vibrator" +
-            "/vtg_level";
+    private final String VIBRATION_STRENGTH_PATH = "/sys/class/leds/vibrator/vmax_mv";
     private final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     private final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
