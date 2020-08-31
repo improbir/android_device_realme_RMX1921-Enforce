@@ -47,3 +47,14 @@
 
 # FPS Info
 /sys/class/drm/sde-crtc-0/measured_fps                              u:object_r:sysfs_fps:s0
+
+# Touch
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.RMX1921      u:object_r:hal_lineage_touch_default_exec:s0
+
+# Executables
+/system/bin/chargeonlymode                    u:object_r:charger_exec:s0
+
+# Kcal
+/sys/devices/platform/kcal_ctrl.0(/.*)?         u:object_r:kcal_dev:s0
+/sys/bus/platform/drivers/kcal_ctrl(/.*)?       u:object_r:kcal_dev:s0
+
