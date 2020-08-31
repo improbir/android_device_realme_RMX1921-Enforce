@@ -446,3 +446,8 @@ PRODUCT_COPY_FILES += \
 # RealmeParts
 PRODUCT_PACKAGES += \
     RealmeParts
+
+# Spectrum Manager
+PRODUCT_PACKAGES += \
+    init.spectrum.rc \
+    init.spectrum.sh

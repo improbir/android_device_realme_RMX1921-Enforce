@@ -210,4 +210,9 @@
     <!-- Touchscreen gesture haptic feedback -->
     <string name="touchscreen_gesture_haptic_feedback">Haptic feedback</string>
     <string name="touchscreen_gesture_haptic_feedback_summary">Vibrate when a Touchscreen gesture is detected</string>
+
+    <!-- Log Tile -->
+    <string name="quick_settings_log_tile_label">LogTile</string>
+    <string name="quick_settings_log_tile_dialog_title">Options</string>
+    <string name="cannot_get_su">Action failed because of missing superuser access</string>
 </resources>
