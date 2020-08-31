@@ -22,3 +22,8 @@ allow system_app kcal_dev:dir search;
 allow system_app spectrum_prop:property_service set;
 get_prop(system_app, spectrum_prop);
 
+# Audio Gain
+allow system_app sysfs_egain:file { open read getattr write };
+allow system_app sysfs_hgain:file { open read getattr write };
+allow system_app sysfs_mgain:file { open read getattr write };
+
