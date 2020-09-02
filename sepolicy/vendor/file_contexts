@@ -54,10 +54,6 @@
 # Executables
 /system/bin/chargeonlymode                    u:object_r:charger_exec:s0
 
-# Kcal
-/sys/devices/platform/kcal_ctrl.0(/.*)?         u:object_r:kcal_dev:s0
-/sys/bus/platform/drivers/kcal_ctrl(/.*)?       u:object_r:kcal_dev:s0
-
 # Audio Gain
 /sys/kernel/sound_control/headphone_gain                     u:object_r:sysfs_headgain:s0
 /sys/kernel/sound_control/mic_gain                           u:object_r:sysfs_micgain:s0

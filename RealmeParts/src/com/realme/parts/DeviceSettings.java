@@ -29,7 +29,6 @@ import android.content.SharedPreferences;
 import androidx.preference.SwitchPreference;
 import android.util.Log;
 
-import com.realme.parts.kcal.KCalSettingsActivity;
 import com.realme.parts.doze.DozeSettingsActivity;
 import com.realme.parts.preferences.CustomSeekBarPreference;
 import com.realme.parts.preferences.SecureSettingListPreference;
@@ -44,8 +43,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String TAG = "RealmeParts";
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
-    private static final String CATEGORY_DISPLAY = "display";
-    private static final String PREF_DEVICE_KCAL = "device_kcal";
 
     private static final String PREF_SPECTRUM = "spectrum";
     private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
@@ -66,7 +63,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private VibratorStrengthPreference mVibratorStrength;
     private Preference mDozePref;
-    private Preference mKcal;
     private SecureSettingListPreference mSPECTRUM;
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
@@ -82,16 +78,6 @@ public class DeviceSettings extends PreferenceFragment implements
         setPreferencesFromResource(R.xml.preferences_realme_parts, rootKey);
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
-
-        PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
-
-        mKcal = findPreference(PREF_DEVICE_KCAL);
-
-        mKcal.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
-            startActivity(intent);
-            return true;
-        });
 
         mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
         mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
