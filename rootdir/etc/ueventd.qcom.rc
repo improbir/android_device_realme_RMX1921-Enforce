@@ -345,6 +345,7 @@ firmware_directories /vendor/firmware_mnt/image/
 # Kmsg device
 /dev/kmsg                                               0620   root       system
 /sys/class/timed_output/vibrator/* 0660 system system
+/sys/module/msm_drm/parameters/* 0666 system system
 
 
 # LED class devices

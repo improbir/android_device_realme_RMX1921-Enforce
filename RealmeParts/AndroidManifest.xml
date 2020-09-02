@@ -71,6 +71,14 @@
                 android:resource="@string/advanced_settings_summary" />
         </activity>
 
+        <activity
+            android:name="com.realme.parts.kcal.DisplayCalibration"
+            android:label="@string/kcal_title">
+          <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+          </intent-filter>
+        </activity>
+
         <service android:name=".doze.DozeService"
                  android:permission="RealmeDozeService">
         </service>

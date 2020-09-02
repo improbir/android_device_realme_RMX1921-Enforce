@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.realme.parts.R;
 
 import com.realme.parts.preferences.VibratorStrengthPreference;
+import com.realme.parts.kcal.DisplayCalibration;
 import com.realme.parts.doze.DozeUtils;
 
 import java.io.IOException;
@@ -110,6 +111,9 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_EARPIECE_GAIN, 0));
         // Dirac
         context.startService(new Intent(context, DiracService.class));
+
+        // KCAL
+        context.startService(new Intent(context, DisplayCalibration.class));
     }
 
         private void showToast(String toastString, Context context) {

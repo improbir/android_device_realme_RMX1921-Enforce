@@ -30,6 +30,7 @@ import androidx.preference.SwitchPreference;
 import android.util.Log;
 
 import com.realme.parts.doze.DozeSettingsActivity;
+import com.realme.parts.kcal.DisplayCalibration;
 import com.realme.parts.preferences.CustomSeekBarPreference;
 import com.realme.parts.preferences.SecureSettingListPreference;
 import com.realme.parts.preferences.SecureSettingSwitchPreference;
@@ -63,6 +64,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private VibratorStrengthPreference mVibratorStrength;
     private Preference mDozePref;
+    private Preference mKcalPref;
     private SecureSettingListPreference mSPECTRUM;
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
@@ -88,6 +90,16 @@ public class DeviceSettings extends PreferenceFragment implements
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
+
+        mKcalPref = findPreference("kcal");
+                mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                     @Override
+                     public boolean onPreferenceClick(Preference preference) {
+                         Intent intent = new Intent(getContext(), DisplayCalibration.class);
+                         startActivity(intent);
+                         return true;
+                     }
+                });
 
         mDozePref = findPreference("doze");
                mDozePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {

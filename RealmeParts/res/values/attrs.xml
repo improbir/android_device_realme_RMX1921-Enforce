@@ -5,5 +5,8 @@
         <attr name="showSign" format="boolean" />
         <attr name="units" format="string|reference" />
         <attr name="continuousUpdates" format="boolean" />
+        <attr name="max_value" format="integer" />
+        <attr name="min_value" format="integer" />
+        <attr name="default_value" format="integer" />
     </declare-styleable>
 </resources>

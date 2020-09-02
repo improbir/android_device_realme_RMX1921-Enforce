@@ -29,6 +29,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+            android:title="@string/kcal">
+         <PreferenceScreen
+                android:key="kcal"
+                android:fragment="com.realme.parts.kcal.DisplayCalibration"
+                android:summary="@string/kcal_summary"
+                android:icon="@drawable/ic_kcal"
+                android:title="@string/kcal_title" />
+     </PreferenceCategory>
+
+    <PreferenceCategory
     android:key="selinux"
     android:title="@string/selinux_category">
 
