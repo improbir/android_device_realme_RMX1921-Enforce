@@ -25,6 +25,7 @@ type sysfs_fps, sysfs_type, fs_type;
 
 # KCAL
 type kcal_dev, sysfs_type, fs_type;
+type sysfs_kcal, fs_type, sysfs_type;
 
 # Audio Gain
 type sysfs_egain, sysfs_type, fs_type;
