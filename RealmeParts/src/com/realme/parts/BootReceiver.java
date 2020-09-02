@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.realme.parts.R;
 
+import com.realme.parts.kcal.Utils;
 import com.realme.parts.preferences.VibratorStrengthPreference;
 import com.realme.parts.kcal.DisplayCalibration;
 import com.realme.parts.doze.DozeUtils;
@@ -35,7 +36,7 @@ import com.realme.parts.doze.DozeUtils;
 import java.io.IOException;
 import java.util.List;
 
-public class BootReceiver extends BroadcastReceiver implements Utils {
+public class BootReceiver extends BroadcastReceiver {
 
     private final String VIBRATION_STRENGTH_PATH = "/sys/class/leds/vibrator/vmax_mv";
     private final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
@@ -101,6 +102,9 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
             }
         }
     }
+
+        DozeUtils.checkDozeService(context);
+            VibratorStrengthPreference.restore(context);
 
         int gain = Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_HEADPHONE_GAIN, 4);
