@@ -38,3 +38,7 @@ allow system_app sysfs_headgain:file rw_file_perms;
 allow system_app sysfs_micgain:dir search;
 allow system_app sysfs_micgain:file rw_file_perms;
 
+#Vibrator
+allow system_app sysfs_leds:dir { search };
+allow system_app sysfs_leds:file { write getattr open read };
+allow system_app apk_data_file:dir { write };
