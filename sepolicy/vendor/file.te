@@ -31,6 +31,4 @@ type sysfs_kcal, fs_type, sysfs_type;
 type sysfs_egain, sysfs_type, fs_type;
 type sysfs_hgain, sysfs_type, fs_type;
 type sysfs_mgain, sysfs_type, fs_type;
-type sysfs_headgain, sysfs_type, fs_type;
-type sysfs_micgain, sysfs_type, fs_type;
 

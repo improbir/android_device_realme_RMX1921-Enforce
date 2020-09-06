@@ -33,11 +33,6 @@ allow system_app sysfs_egain:file { open read getattr write };
 allow system_app sysfs_hgain:file { open read getattr write };
 allow system_app sysfs_mgain:file { open read getattr write };
 
-allow system_app sysfs_headgain:dir search;
-allow system_app sysfs_headgain:file rw_file_perms;
-allow system_app sysfs_micgain:dir search;
-allow system_app sysfs_micgain:file rw_file_perms;
-
 #Vibrator
 allow system_app sysfs_leds:dir { search };
 allow system_app sysfs_leds:file { write getattr open read };
