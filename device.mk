@@ -17,6 +17,10 @@ $(call inherit-product-if-exists, vendor/realme/RMX1921/RMX1921-vendor.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 29
+PRODUCT_EXTRA_VNDK_VERSIONS := 29
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
