@@ -74,6 +74,7 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 
 # Charger Mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
+TARGET_USES_NON_LEGACY_POWERHAL := true
 
 # Dex
 ifeq ($(HOST_OS),linux)

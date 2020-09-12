@@ -57,3 +57,5 @@
 # Kcal
 /sys/module/msm_drm/parameters(/.*)?					u:object_r:sysfs_kcal:s0
 
+# PowerHAL
+/vendor/bin/hw/android\.hardware\.power@1\.2-service-qti                u:object_r:hal_power_default_exec:s0
