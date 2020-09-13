@@ -158,10 +158,26 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+# IRQ
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+
+# IPv6
+PRODUCT_PACKAGES += \
+    ethertypes \
+    libebtc
+
 # IPA
 PRODUCT_PACKAGES += \
     ipacm \
-    IPACM_cfg.xml
+    IPACM_cfg.xml \
+    libipanat \
+    liboffloadhal \
+    android.hardware.tetheroffload.control@1.0
+
+# IPC router config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # GApps permissions
 PRODUCT_COPY_FILES += \
@@ -176,9 +192,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(LOCAL_PATH)/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
     
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:vendor/etc/sec_config
-
 # Hardware
 PRODUCT_BOARD_PLATFORM := sdm845
 PRODUCT_USES_QCOM_HARDWARE := true
@@ -312,9 +325,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti 
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
-
 # Properties
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 -include $(LOCAL_PATH)/vendor_props.mk
@@ -385,6 +395,9 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.realme_sdm710 \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
