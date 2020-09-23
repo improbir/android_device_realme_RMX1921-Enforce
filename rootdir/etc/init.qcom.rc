@@ -184,14 +184,17 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
-    chown system system /proc/touchpanel/oppo_tp_limit_enable
+    chown system system /proc/touchpanel/game_switch_enable
     chown system system /proc/touchpanel/oppo_tp_direction
-    chmod 0660 /proc/touchpanel/oppo_tp_limit_enable
-    chmod 0660 /proc/touchpanel/oppo_tp_direction
-    write /proc/touchpanel/oppo_tp_limit_enable 0
-    write /proc/touchpanel/oppo_tp_direction 1
+    chown system system /proc/touchpanel/oppo_tp_limit_enable
+    chmod 0666 /proc/touchpanel/game_switch_enable
+    chmod 0666 /proc/touchpanel/oppo_tp_direction
+    chmod 0666 /proc/touchpanel/oppo_tp_limit_enable
     write /proc/touchpanel/tp_fw_update 1
 
+    #Preset touchpanel tuner nodes
+    write /proc/touchpanel/oppo_tp_limit_enable 0
+    write /proc/touchpanel/oppo_tp_direction 1
 
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
