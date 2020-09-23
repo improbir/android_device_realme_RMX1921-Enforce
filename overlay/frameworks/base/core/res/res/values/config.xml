@@ -603,4 +603,6 @@
     <!-- Custom proximity sensor to be used for pocket detection and doze -->
     <string name="config_customProximitySensor">"qti.sensor.proximity_fake"</string>
 
+    <!-- Enable the RingtonePickerActivity in 'com.android.providers.media'. -->
+    <bool name="config_defaultRingtonePickerEnabled">true</bool>
 </resources>
