@@ -499,27 +499,6 @@
 
     <!-- Height of the status bar -->
     <dimen name="status_bar_height_portrait">38.0dip</dimen>
-
-    <!-- Specifies the maximum burn-in offset displacement from the center.
-         If -1, no maximum value will be used. -->
-    <integer name="config_burnInProtectionMaxRadius">-1</integer>
-
-    <!-- Specifies the minimum burn-in offset horizontally. -->
-    <integer name="config_burnInProtectionMinHorizontalOffset">-15</integer>
-
-    <!-- Specifies the maximum burn-in offset horizontally. -->
-    <integer name="config_burnInProtectionMaxHorizontalOffset">15</integer>
-
-    <!-- Specifies the minimum burn-in offset vertically. -->
-    <integer name="config_burnInProtectionMinVerticalOffset">-40</integer>
-
-    <!-- Specifies the maximum burn-in offset vertically. -->
-    <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
-
-    <!-- Smart charge sysfs node and value for suspend/resume charging-->
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
-    <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
-    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
  
     <!-- The default journal mode to use use when Write-Ahead Logging is not active.
          Choices are: OFF, DELETE, TRUNCATE, PERSIST and MEMORY.
