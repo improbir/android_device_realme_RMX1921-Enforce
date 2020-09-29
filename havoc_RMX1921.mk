@@ -38,5 +38,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Build Official
 export export HAVOC_BUILD_TYPE=Official
 
-
+# Havoc Stuff
+HAVOC_MAINTAINER := Probir Ghosh (officialpro)
+HAVOC_GROUP_URL := https://t.me/havoc_RMX1921
 
