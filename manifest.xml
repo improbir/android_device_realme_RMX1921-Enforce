@@ -210,6 +210,15 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.sensorscalibrate</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISensorsCalibrate</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.camera.provider</name>
         <transport>hwbinder</transport>
         <version>2.4</version>
@@ -772,16 +781,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-    <!-- Lineage Power HAL-->
-    <hal format="hidl">
-        <name>vendor.lineage.power</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ILineagePower</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <!-- Vendor HALs -->
         <hal format="hidl">
         <name>vendor.oppo.hardware.camera.oppoAlgoProcessService</name>
@@ -812,5 +811,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
         <fqname>@1.0::IIWlan/slot1</fqname>
         <fqname>@1.0::IIWlan/slot2</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.ant</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAntHci</name>
+            <instance>default</instance>
+        </interface>
     </hal>
 </manifest>
