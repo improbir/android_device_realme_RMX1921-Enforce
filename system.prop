@@ -89,6 +89,10 @@ ro.vendor.qti.va_aosp.support=1
 ro.hardware.nfc_nci=nqx.default
 ro.nfc.port=I2C
 
+# Proximity
+ro.display.underscreen.lightsensor.support=1
+ro.lcd.display.screen.underlightsensor.region=624,28,672,76
+
 # RCS
 persist.rcs.supported=0
 
@@ -111,10 +115,6 @@ ro.com.android.dataroaming=true
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
 ro.telephony.iwlan_operation_mode=legacy
-
-# Sensors
-persist.sys.oppo.fusionlight=true
-persist.sys.oppo.proximity=true
 
 # Thermal
 persist.sys.enable.oscar=0
