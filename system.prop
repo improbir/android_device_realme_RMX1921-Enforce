@@ -10,7 +10,7 @@ audio.sys.offload.pstimeout.secs=3
 vendor.bluetooth.soc=cherokee
 
 # Camera
-ro.camera.hfr.enable=1
+ro.camera.hfr.enable=0
 persist.camera.HAL3.enabled=1
 ro.camera.relight.enable=0
 ro.camera.attr.detect.enable=1
