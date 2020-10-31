@@ -93,8 +93,11 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    BluetoothResCommon \
-    libldacBT_dec
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default \
+    libbthost_if \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
